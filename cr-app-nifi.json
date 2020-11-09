@@ -1,0 +1,52 @@
+{
+    "apiVersion": "kubedirector.hpe.com/v1beta1",
+    "kind": "KubeDirectorApp",
+    "metadata": {
+        "name" : "nifi"
+    },
+    "spec" : {
+        "systemdRequired": true,
+        "defaultPersistDirs" : ["/home"],
+        "defaultEventList" : ["configure", "addnodes", "delnodes"],
+        "config": {
+            "roleServices": [
+                {
+                    "serviceIDs": [
+                        "ssh"
+                    ],
+                    "roleID": "node"
+                }
+            ],
+            "selectedRoles": [
+                "node"
+            ]
+        },
+        "label": {
+            "name": "NiFi 1.12",
+            "description": "Apache NiFi 1.12"
+        },
+        "distroID": "kubedirector/nifi",
+        "version": "0.1",
+        "configSchemaVersion": 7,
+        "services": [
+            {
+                "endpoint": {
+                    "port": 22,
+                    "isDashboard": false
+                },
+                "id": "ssh",
+                "label": {
+                    "name": "SSH"
+                }
+            }
+        ],
+        "defaultImageRepoTag": "localhost:5000/kubedirector-nifi:0.1",
+        "defaultConfigPackage": null,
+        "roles": [
+            {
+                "cardinality": "1+",
+                "id": "node"
+            }
+        ]
+    }
+}
