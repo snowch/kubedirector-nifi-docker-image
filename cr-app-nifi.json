@@ -31,6 +31,8 @@
         "services": [
             {
                 "endpoint": {
+                    "urlScheme": "http",
+                    "path": "/",
                     "port": 8080,
                     "isDashboard": true
                 },
@@ -41,7 +43,9 @@
             }
         ],
         "defaultImageRepoTag": "localhost:5000/kubedirector-nifi:0.1",
-        "defaultConfigPackage": "file:///opt/configscripts/appconfig.tgz",
+        "defaultConfigPackage": {
+            "packageURL": "file:///opt/configscripts/appconfig.tgz"
+        },
         "roles": [
             {
                 "cardinality": "1+",
