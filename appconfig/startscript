@@ -1,0 +1,8 @@
+#!/bin/env bash
+### Error for wrong option handled ###
+if [[ "$1" == "--addnodes" ]] || [[ "$1" == "--delnodes" ]] || [[ "$1" == "--configure" ]]; then
+  echo "Valid values. So execute the later code"
+else
+  echo "ERROR: Unknown command line option(s): '$@'"
+  exit 10
+fi

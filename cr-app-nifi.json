@@ -12,7 +12,7 @@
             "roleServices": [
                 {
                     "serviceIDs": [
-                        "ssh"
+                        "http"
                     ],
                     "roleID": "node"
                 }
@@ -31,17 +31,17 @@
         "services": [
             {
                 "endpoint": {
-                    "port": 22,
-                    "isDashboard": false
+                    "port": 8080,
+                    "isDashboard": true
                 },
-                "id": "ssh",
+                "id": "http",
                 "label": {
-                    "name": "SSH"
+                    "name": "http"
                 }
             }
         ],
         "defaultImageRepoTag": "localhost:5000/kubedirector-nifi:0.1",
-        "defaultConfigPackage": null,
+        "defaultConfigPackage": "file:///opt/configscripts/appconfig.tgz",
         "roles": [
             {
                 "cardinality": "1+",

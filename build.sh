@@ -2,6 +2,9 @@
 
 wget -c  https://www.mirrorservice.org/sites/ftp.apache.org/nifi/1.12.1/nifi-1.12.1-bin.tar.gz
 
+chmod +x appconfig/startscript
+tar cvzf appconfig.tgz appconfig/
+
 docker ps -f name=registry | grep -q registry \
     || docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
