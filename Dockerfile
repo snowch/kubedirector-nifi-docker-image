@@ -6,7 +6,7 @@ COPY appconfig.tgz /opt/configscripts/
 
 RUN yum install -y java-11-openjdk
 
-COPY nifi-1.12.1-bin.tar.gz /opt
+#COPY nifi-1.12.1-bin.tar.gz /opt
 
 RUN cd /opt && \
     tar xf nifi-1.12.1-bin.tar.gz && \
