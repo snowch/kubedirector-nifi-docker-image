@@ -11,11 +11,11 @@ jobs:
       - 
         name: checkout
         uses: actions/checkout@v2
-      - 
-        name: curl
-        uses: enflo/curl-action@master
-        with:
-          curl: https://www.mirrorservice.org/sites/ftp.apache.org/nifi/1.12.1/nifi-1.12.1-bin.tar.gz --output nifi-1.12.1-bin.tar.gz
+#       - 
+#         name: curl
+#         uses: enflo/curl-action@master
+#         with:
+#           curl: https://www.mirrorservice.org/sites/ftp.apache.org/nifi/1.12.1/nifi-1.12.1-bin.tar.gz --output nifi-1.12.1-bin.tar.gz
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
